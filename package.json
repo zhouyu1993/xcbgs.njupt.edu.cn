@@ -1,0 +1,44 @@
+{
+  "name": "xcbgs.njupt.edu.cn",
+  "version": "1.0.0",
+  "description": "xcbgs",
+  "keywords": [
+    "xcbgs"
+  ],
+  "author": "RainJoy <1490079545@qq.com>",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://"
+  },
+  "bugs": {
+    "url": "",
+    "email": ""
+  },
+  "homepage": "",
+  "license": "",
+  "scripts": {
+    "dev": "rm -rf dist && gulp",
+    "build": "rm -rf build && gulp build",
+    "zip": "npm run build && cd build && zip -r xcbgs.zip *"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "browser-sync": "^2.17.5",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.2.0",
+    "gulp-uglify": "^3.0.0"
+  },
+  "engines": {
+    "node": "8.14.0",
+    "npm": "^6.4.1"
+  }
+}
