@@ -1,3 +1,4 @@
+// 获取导航列表
 function RJgetNav (id, className) {
   if (!$(id)) return
 
@@ -12,6 +13,7 @@ function RJgetNav (id, className) {
   $(className + ' .list').html(html)
 }
 
+// 获取文章列表
 function RJgetArticles (id, className) {
   if (!$(id)) return
 
@@ -33,6 +35,7 @@ function RJgetArticles (id, className) {
   $(className + ' .list').html(html)
 }
 
+// 获取图片列表
 function RJgetPics (imgJsons, className) {
   var html = ''
   imgJsons.forEach(function (v, i) {
@@ -41,6 +44,7 @@ function RJgetPics (imgJsons, className) {
   $(className + ' .list').html(html)
 }
 
+// 图片轮播
 function RJswipe (imgJsons, className, time = 5000) {
   var reder = function (hover) {
     $(className + ' a').hide()
@@ -58,6 +62,7 @@ function RJswipe (imgJsons, className, time = 5000) {
   }, time)
 }
 
+// 搜索功能
 function RJsearch () {
   var searchInput = $('.nav .search input')
   var searchButton = $('.nav .search button')
@@ -103,5 +108,15 @@ function RJsearch () {
     $('#app').show()
   } catch (e) {
     console.log(e)
+  }
+
+  var screenWidth = window.screen.width
+  var htmlWidth = 1100
+  // 比较屏幕宽度与页面宽度大小
+  if (screenWidth < htmlWidth) {
+    var meta = document.createElement('meta');
+    meta.setAttribute('name', 'viewport');
+    meta.setAttribute('content', 'width=device-width, initial-scale=' + (screenWidth / htmlWidth) + ', user-scalable=no, viewport-fit=cover');
+    document.head.insertBefore(meta, document.querySelector('title'));
   }
 })()

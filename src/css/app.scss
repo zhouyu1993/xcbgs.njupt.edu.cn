@@ -63,6 +63,7 @@ img {
 
   .content {
     display: flex;
+    margin-top: 10px;
 
     .left, .right {
       width: 300px;
@@ -186,7 +187,7 @@ img {
   }
 
   .friendship-link {
-    margin: 20px 0;
+    margin: 20px 0 30px;
 
     .list {
       display: flex;
@@ -219,12 +220,12 @@ img {
     display: flex;
     align-items: flex-start;
     width: 1100px;
-    min-height: 700px;
+    min-height: 400px;
     margin: 20px auto 0;
 
     .left {
       width: 200px;
-      min-height: 700px;
+      min-height: 400px;
       padding: 10px;
       background-color: #fff;
 
@@ -272,7 +273,7 @@ img {
     .right {
       position: relative;
       flex: 1;
-      min-height: 700px;
+      min-height: 400px;
       margin-left: 40px;
 
       .right-top {
@@ -330,7 +331,7 @@ img {
 
   .displayinfo {
     width: 1100px;
-    min-height: 700px;
+    min-height: 400px;
     margin: 20px auto 0;
 
     .displayinfo-detail {
