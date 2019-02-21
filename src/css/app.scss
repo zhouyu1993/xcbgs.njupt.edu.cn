@@ -251,11 +251,19 @@ img {
               color: #fff!important;
               background: #003399!important;
               border-radius: 10px!important;
+              border: 0!important;
 
               &:hover {
                 background: linear-gradient(#ffe84f, #ff7200)!important;
               }
             }
+          }
+
+          .wp_subcolumn {
+            width: 90%;
+            margin-left: 10%;
+            margin-top: 20px!important;
+            border: 0!important;
           }
         }
       }
