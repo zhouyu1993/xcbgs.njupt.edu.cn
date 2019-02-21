@@ -1,3 +1,44 @@
+# gulp
+
+不支持 ES6
+
+# dev
+
+``` bash
+npm run dev
+```
+
+open `localhost:8080/main.htm`
+
+# build
+
+``` bash
+npm run build
+
+npm run zip
+```
+
+# 适应移动端
+
+``` js
+(function () {
+  var screenWidth = window.screen.width
+  var htmlWidth = 1100
+  // 比较屏幕宽度与页面宽度大小
+  if (screenWidth < htmlWidth) {
+    var meta = document.createElement('meta');
+    meta.setAttribute('name', 'viewport');
+    meta.setAttribute('content', 'width=device-width, initial-scale=' + (screenWidth / htmlWidth) + ', user-scalable=no, viewport-fit=cover');
+    document.head.insertBefore(meta, document.querySelector('title'));
+  }
+})()
+```
+
+# 思考
+
+  * 改稿：0，1，2
+  * 兼容性问题
+
 # webplus
 
 一般首页绑定频道
@@ -91,42 +132,3 @@ http://202.119.224.70/_s332/dsjdwxczt/list.psp
 以上两个分别对应 PPT 第 4、5 页，都是文章内容，需要在后台自行排版
 
 建议可以切成图片排版
-
-# gulp
-
-不支持 ES6
-
-# dev
-
-``` bash
-npm run dev
-```
-
-open `localhost:8080/main.htm`
-
-# build
-
-``` bash
-npm run build
-
-npm run zip
-```
-
-# 适应移动端
-
-``` js
-var screenWidth = window.screen.width
-var htmlWidth = 1100
-// 比较屏幕宽度与页面宽度大小
-if (screenWidth < htmlWidth) {
-  var meta = document.createElement('meta');
-  meta.setAttribute('name', 'viewport');
-  meta.setAttribute('content', 'width=device-width, initial-scale=' + (screenWidth / htmlWidth) + ', user-scalable=no, viewport-fit=cover');
-  document.head.insertBefore(meta, document.querySelector('title'));
-}
-```
-
-# 思考
-
-  * 改稿：0，1，2
-  * 兼容性问题
