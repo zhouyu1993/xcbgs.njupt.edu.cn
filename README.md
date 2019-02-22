@@ -47,6 +47,8 @@ npm run zip
 
 得支持 IE 8 ！
 
+HTML5 标签，如 section 不支持！
+
 `forEach` IE 9
 
 `document.head` IE 9

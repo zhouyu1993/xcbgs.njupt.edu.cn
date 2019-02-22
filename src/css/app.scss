@@ -37,6 +37,7 @@ img {
 
     .flex-item {
       display: inline-block;
+      vertical-align: top;
     }
 
     .list {
@@ -45,6 +46,7 @@ img {
 
       a {
         display: inline-block;
+        vertical-align: top;
         margin: 5px 10px;
         padding: 0 10px 0 15px;
         color: #fff;
@@ -77,6 +79,7 @@ img {
 
     .left, .right {
       display: inline-block;
+      vertical-align: top;
       width: 300px;
       margin: 0 10px 10px;
     }
@@ -84,11 +87,12 @@ img {
     .center {
       flex: 1;
       display: inline-block;
+      vertical-align: top;
       width: 450px;
       margin: 0 5px 10px;
     }
 
-    section {
+    .section {
       margin-top: 20px;
       padding: 10px;
       border: 1px solid #ddd;
@@ -103,6 +107,7 @@ img {
 
         span {
           display: inline-block;
+          vertical-align: top;
           font-size: 16px;
           font-weight: bold;
           color: #000;
@@ -110,6 +115,7 @@ img {
 
         a {
           display: inline-block;
+          vertical-align: top;
           font-size: 14px;
           color: #333;
         }
@@ -130,13 +136,13 @@ img {
 
             i {
               display: inline-block;
+              vertical-align: middle;
               margin-top: -4px;
               margin-right: 8px;
               font-size: 0;
               border-top: 5px solid transparent;
               border-bottom: 5px solid transparent;
               border-left: 8px solid #e8b301;
-              vertical-align: middle;
             }
           }
 
@@ -211,6 +217,7 @@ img {
 
       a {
         display: inline-block;
+        vertical-align: top;
 
         img {
           width: 200px;
@@ -242,6 +249,7 @@ img {
 
     .left {
       display: inline-block;
+      vertical-align: top;
       width: 200px;
       min-height: 400px;
       padding: 10px;
@@ -292,6 +300,7 @@ img {
       position: relative;
       flex: 1;
       display: inline-block;
+      vertical-align: top;
       min-height: 400px;
       margin-left: 40px;
 
@@ -379,6 +388,7 @@ img {
 
         .time, .view, .source {
           display: inline-block;
+          vertical-align: top;
           font-size: 14px;
         }
 
