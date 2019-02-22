@@ -22,22 +22,36 @@ npm run zip
 
 ``` js
 (function () {
-  var screenWidth = window.screen.width
-  var htmlWidth = 1100
-  // 比较屏幕宽度与页面宽度大小
-  if (screenWidth < htmlWidth) {
-    var meta = document.createElement('meta');
-    meta.setAttribute('name', 'viewport');
-    meta.setAttribute('content', 'width=device-width, initial-scale=' + (screenWidth / htmlWidth) + ', user-scalable=no, viewport-fit=cover');
-    document.head.insertBefore(meta, document.querySelector('title'));
+  try {
+    // ie > 8
+    if (document.head) {
+      var screenWidth = window.screen && window.screen.width
+      var htmlWidth = 1100
+      // 比较屏幕宽度与页面宽度大小
+      if (screenWidth < htmlWidth) {
+        var meta = document.createElement('meta');
+        meta.setAttribute('name', 'viewport');
+        meta.setAttribute('content', 'width=device-width, initial-scale=' + (screenWidth / htmlWidth) + ', user-scalable=no, viewport-fit=cover');
+        document.head.insertBefore(meta, document.querySelector('title'));
+      }
+    }
+  } catch (e) {
+    console.log(e)
+
+    alert(e)
   }
 })()
 ```
 
-# 思考
+# 兼容性问题
 
-  * 改稿：0，1，2
-  * 兼容性问题
+得支持 IE 8 ！
+
+`forEach` IE 9
+
+`document.head` IE 9
+
+`函数参数默认值` 不允许！
 
 # webplus
 
@@ -46,6 +60,8 @@ npm run zip
 如果列表页、详情页也想绑定频道，如导航、搜索，也需要如首页一样写+配置
 
 模版配置那边可以切换首页、列表页、详情页
+
+模版上传后，记得引用 jquery 版本，最好选最高版本
 
 ## 频道1-导航-固定频道
 

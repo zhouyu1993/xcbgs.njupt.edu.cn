@@ -2,14 +2,17 @@
 function RJgetNav (id, className) {
   if (!$(id)) return
 
-  var html = ''
   var list = $(id + ' .wp_nav').children().children('a')
-  Array.prototype.slice.call(list).forEach(function (v) {
-    var a = $(v)
+  var listArr = Array.prototype.slice.call(list)
+
+  var html = ''
+  for (var i = 0; i < listArr.length; i ++) {
+    var a = $(listArr[i])
     var href = a.attr('href')
     var text = a.attr('title')
     html += '<a href="' + href + '">' + text + '</a>'
-  })
+  }
+
   $(className + ' .list').html(html)
 }
 
@@ -23,43 +26,56 @@ function RJgetArticles (id, className) {
   } else {
     $(className + ' h1 a').hide()
   }
-  var html = ''
+
   var list = $(id + ' .list_item')
-  Array.prototype.slice.call(list).forEach(function (v) {
-    var a = $(v).find('a')
+  var listArr = Array.prototype.slice.call(list)
+
+  var html = ''
+  for (var i = 0; i < listArr.length; i ++) {
+    var a = $(listArr[i]).find('a')
     var href = a.attr('href')
     var text = a.attr('title')
-    var time = $(v).find('.Article_PublishDate').text()
-    html += '<a href="' + href + '"><p><i></i>' + text + '</p><span>' + time + '</span></a>'
-  })
+    html += '<a href="' + href + '"><p><i></i>' + text + '</p></a>'
+  }
+
   $(className + ' .list').html(html)
 }
 
 // 获取图片列表
 function RJgetPics (imgJsons, className) {
   var html = ''
-  imgJsons.forEach(function (v, i) {
-    html += '<a href="' + v.url + '"><img src="' + v.src + '"></a>'
-  })
+  var spans = ''
+  for (var i = 0; i < imgJsons.length; i ++) {
+    html += '<a href="' + imgJsons[i].url + '"><img src="' + imgJsons[i].src + '"></a>'
+    spans += i === 0 ? ('<span class="hover">' + (i + 1) + '</span>') : ('<span>' + (i + 1) + '</span>')
+  }
+
   $(className + ' .list').html(html)
+  $(className + ' .num').html(spans)
 }
 
 // 图片轮播
-function RJswipe (imgJsons, className, time = 5000) {
+function RJswipe (imgJsons, className, time) {
   var reder = function (hover) {
     $(className + ' a').hide()
     $(className + ' a').eq(hover).css({
       display: 'block'
     })
+
+    $(className + ' span').removeClass('hover')
+    $(className + ' span').eq(hover).addClass('hover')
   }
+
   var hover = 0
   var flag = setInterval(function () {
     hover++
+
     if (hover === imgJsons.length) {
       hover = 0
     }
+
     reder(hover)
-  }, time)
+  }, time || 5000)
 }
 
 // 搜索功能
@@ -77,6 +93,7 @@ function RJsearch () {
       toSearch()
     }
   })
+
   searchButton.on('click', function (event) {
     toSearch()
   })
@@ -84,7 +101,7 @@ function RJsearch () {
 
 (function() {
   try {
-    if (!$ || !$.ajax) return
+    if (!window.$ || !window.$.ajax) return alert('jquery error! 请升级浏览器或使用主流浏览器！')
 
     RJgetNav('#wp_nav_w1', '.nav')
 
@@ -108,15 +125,26 @@ function RJsearch () {
     $('#app').show()
   } catch (e) {
     console.log(e)
+
+    alert(e)
   }
 
-  var screenWidth = window.screen.width
-  var htmlWidth = 1100
-  // 比较屏幕宽度与页面宽度大小
-  if (screenWidth < htmlWidth) {
-    var meta = document.createElement('meta');
-    meta.setAttribute('name', 'viewport');
-    meta.setAttribute('content', 'width=device-width, initial-scale=' + (screenWidth / htmlWidth) + ', user-scalable=no, viewport-fit=cover');
-    document.head.insertBefore(meta, document.querySelector('title'));
+  try {
+    // ie > 8
+    if (document.head) {
+      var screenWidth = window.screen && window.screen.width
+      var htmlWidth = 1100
+      // 比较屏幕宽度与页面宽度大小
+      if (screenWidth < htmlWidth) {
+        var meta = document.createElement('meta');
+        meta.setAttribute('name', 'viewport');
+        meta.setAttribute('content', 'width=device-width, initial-scale=' + (screenWidth / htmlWidth) + ', user-scalable=no, viewport-fit=cover');
+        document.head.insertBefore(meta, document.querySelector('title'));
+      }
+    }
+  } catch (e) {
+    console.log(e)
+
+    alert(e)
   }
 })()

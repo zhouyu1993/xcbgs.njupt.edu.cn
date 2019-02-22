@@ -1,5 +1,5 @@
 // https://github.com/michael-ciniawsky/postcss-load-config
-// http://browserl.ist/?q=>+1%25&q=last+3+versions&q=ios+>=+8&q=android+>=+4.2&q=ie+>=+8
+// http://browserl.ist/?q=>+1%25&q=last+3+versions&q=ios+>=+8&q=android+>=+4.2&q=ie+>=+7
 
 module.exports = {
   "plugins": {
@@ -9,8 +9,8 @@ module.exports = {
         "> 1%",
         "last 3 versions",
         "ios >= 8",
-        "android >= 4.4",
-        "ie >= 8"
+        "android >= 4.2",
+        "ie >= 7"
       ]
     }
   }
