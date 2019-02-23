@@ -173,12 +173,47 @@ http://202.119.224.70/_s332/xcdt/list.psp
 </div>
 <div style="position:relative;z-index:2;height:200px;margin-top:30px;">
     <div style="position:absolute;top:0;left:10%;z-index:3;width:300px;height:200px;">
-        <img src="/_upload/article/images/a8/8b/fcea74ae4ae1aee5a47dfb2312f3/49633c1f-31ac-446c-a706-a790c9e2ede2.jpeg" style="width:300px;height:200px;" /><a style="position:absolute;top:50%;left:0;z-index:3;width:300px;height:50px;font-size:20px;font-weight:bold;line-height:50px;color:#af1f25;text-align:center;margin-top:-25px;" href="http://202.119.224.70/_s332/dsjdwxczt/list.psp">第三届党委巡察专题</a>
+        <a href="http://202.119.224.70/_s332/dsjdwxczt/list.psp"><img src="/_upload/article/images/a8/8b/fcea74ae4ae1aee5a47dfb2312f3/49633c1f-31ac-446c-a706-a790c9e2ede2.jpeg" style="width:300px;height:200px;" />
+            <div style="position:absolute;top:50%;left:0;z-index:3;width:300px;height:50px;font-size:20px;font-weight:bold;line-height:50px;color:#af1f25;text-align:center;margin-top:-25px;">
+                第三届党委巡察专题
+            </div></a>
     </div>
     <div style="position:absolute;top:0;right:10%;z-index:3;width:300px;height:200px;">
-        <img src="/_upload/article/images/a8/8b/fcea74ae4ae1aee5a47dfb2312f3/49633c1f-31ac-446c-a706-a790c9e2ede2.jpeg" style="width:300px;height:200px;" /><a style="position:absolute;top:50%;left:0;z-index:3;width:300px;height:50px;font-size:20px;font-weight:bold;line-height:50px;color:#af1f25;text-align:center;margin-top:-25px;" href="http://202.119.224.70/_s332/xcjj/list.psp">巡察聚焦</a>
+        <a href="http://202.119.224.70/_s332/xcjj/list.psp"><img src="/_upload/article/images/a8/8b/fcea74ae4ae1aee5a47dfb2312f3/49633c1f-31ac-446c-a706-a790c9e2ede2.jpeg" style="width:300px;height:200px;" />
+            <div style="position:absolute;top:50%;left:0;z-index:3;width:300px;height:50px;font-size:20px;font-weight:bold;line-height:50px;color:#af1f25;text-align:center;margin-top:-25px;">
+                巡察聚焦
+            </div></a>
     </div>
 </div>
 ```
 
 http://202.119.224.70/_s332/dsjdwxczt/list.psp
+
+``` html
+<div style="position:relative;z-index:2;height:60px;margin-top:20px;">
+    <img src="/_upload/article/images/a2/35/80a51a6249a79b8ffd07cabb9198/c5b2b7ce-2fb2-4a96-a125-4987740c22fe.png" style="position:absolute;top:50%;left:50%;z-index:3;width:640px;height:2px;margin-top:-1px;margin-left:-320px;" /><img src="/_upload/article/images/a2/35/80a51a6249a79b8ffd07cabb9198/3200c30a-5f80-43c7-bfbf-fe5dba969a15.png" style="position:absolute;top:50%;left:50%;z-index:4;width:200px;height:60px;margin-top:-30px;margin-left:-100px;" />
+    <div style="position:absolute;top:50%;left:50%;z-index:5;width:200px;height:60px;font-size:16px;font-weight:bold;line-height:60px;color:#af1f25;text-align:center;margin-top:-30px;margin-left:-100px;">
+        第三届党委巡察专题
+    </div>
+</div>
+<div style="position:relative;z-index:2;height:100px;margin-top:30px;">
+    <div style="position:absolute;top:0;left:10%;z-index:3;width:150px;height:100px;">
+        <a href="http://202.119.224.70/_s332/xcjz/list.psp"><img src="/_upload/article/images/a2/35/80a51a6249a79b8ffd07cabb9198/1ef90bd1-1deb-45a4-bb23-f7d7d61c3c4d.png" style="width:150px;height:100px;" />
+            <div style="position:absolute;top:50%;left:0;z-index:3;width:150px;height:50px;font-size:20px;font-weight:bold;line-height:50px;color:#af1f25;text-align:center;margin-top:-25px;">
+                巡察进驻
+            </div></a>
+    </div>
+    <div style="position:absolute;top:0;left:50%;z-index:3;width:150px;height:100px;margin-left:-75px;">
+        <a href="http://202.119.224.70/_s332/xcfk/list.psp"><img src="/_upload/article/images/a2/35/80a51a6249a79b8ffd07cabb9198/1ef90bd1-1deb-45a4-bb23-f7d7d61c3c4d.png" style="width:150px;height:100px;" />
+            <div style="position:absolute;top:50%;left:0;z-index:3;width:150px;height:50px;font-size:20px;font-weight:bold;line-height:50px;color:#af1f25;text-align:center;margin-top:-25px;">
+                巡察反馈
+            </div></a>
+    </div>
+    <div style="position:absolute;top:0;right:10%;z-index:3;width:150px;height:100px;">
+        <a href="http://202.119.224.70/_s332/xczg/list.psp"><img src="/_upload/article/images/a2/35/80a51a6249a79b8ffd07cabb9198/1ef90bd1-1deb-45a4-bb23-f7d7d61c3c4d.png" style="width:150px;height:100px;" />
+            <div style="position:absolute;top:50%;left:0;z-index:3;width:150px;height:50px;font-size:20px;font-weight:bold;line-height:50px;color:#af1f25;text-align:center;margin-top:-25px;">
+                巡察整改
+            </div></a>
+    </div>
+</div>
+```
