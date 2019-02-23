@@ -20,7 +20,7 @@
   "scripts": {
     "dev": "rm -rf dist && gulp",
     "build": "rm -rf build && gulp build",
-    "zip": "npm run build && cd build && zip -r xcbgs.zip *"
+    "zip": "npm run build && cd build && zip -r build.zip *"
   },
   "dependencies": {},
   "devDependencies": {
