@@ -127,7 +127,26 @@ More图标：显示
 
 图片类 -> 多图交替2（只带索引）
 
-首页显示图片大小：430*275
+首页滚动的图片频道，显示图片大小：430*275
+
+一般是把文章内第一张图作为封面图
+
+如果图片尺寸太大，尤其是高度太大，需要另传封面图
+
+如果不传封面图，直接在文章内编辑传一张，会压缩模糊掉。可以截取成两张，第一张尺寸尽量保存为 430*275 的比例
+
+举个例子，一张图是：640*4356，我们需要分成两张图：640*410，640*3946，这样第一张图 640*410 就保持了 430*275 的比例
+
+而且后台很变态，编辑文章时，必须上传的第一张图是才能作为图片频道展示，否则需要删除文章，重新编辑
+
+``` html
+<p style="text-align:center;">
+    <img src="/_upload/article/images/a0/84/3034beeb4a9786c5cb7cac804336/14c85430-e022-4acf-a4a4-cf6c139ce880.jpg" style="vertical-align:middle;" />
+</p>
+<p style="text-align:center;">
+    <img src="/_upload/article/images/a0/84/3034beeb4a9786c5cb7cac804336/5b5a5282-23a1-4826-8661-408520518032.jpg" style="vertical-align:middle;" />
+</p>
+```
 
 ## 频道7-友情链接-图片频道
 
@@ -145,8 +164,21 @@ More图标：显示
 
 http://202.119.224.70/_s332/xcdt/list.psp
 
+``` html
+<div style="position:relative;z-index:2;height:50px;margin-top:20px;">
+    <img src="/_upload/article/images/a8/8b/fcea74ae4ae1aee5a47dfb2312f3/c1ae19aa-f0ba-4112-a7ae-e1dae86c843d.png" style="position:absolute;top:50%;left:50%;z-index:3;width:640px;height:2px;margin-top:-1px;margin-left:-320px;" /><img src="/_upload/article/images/a8/8b/fcea74ae4ae1aee5a47dfb2312f3/5b41b7a9-9f35-4c04-8afa-76c73704d09d.png" style="position:absolute;top:50%;left:50%;z-index:4;width:100px;height:50px;margin-top:-25px;margin-left:-50px;" />
+    <div style="position:absolute;top:50%;left:50%;z-index:5;width:100px;height:50px;font-size:16px;font-weight:bold;line-height:50px;color:#af1f25;text-align:center;margin-top:-25px;margin-left:-50px;">
+        巡察动态
+    </div>
+</div>
+<div style="position:relative;z-index:2;height:200px;margin-top:30px;">
+    <div style="position:absolute;top:0;left:10%;z-index:3;width:300px;height:200px;">
+        <img src="/_upload/article/images/a8/8b/fcea74ae4ae1aee5a47dfb2312f3/49633c1f-31ac-446c-a706-a790c9e2ede2.jpeg" style="width:300px;height:200px;" /><a style="position:absolute;top:50%;left:0;z-index:3;width:300px;height:50px;font-size:20px;font-weight:bold;line-height:50px;color:#af1f25;text-align:center;margin-top:-25px;" href="http://202.119.224.70/_s332/dsjdwxczt/list.psp">第三届党委巡察专题</a>
+    </div>
+    <div style="position:absolute;top:0;right:10%;z-index:3;width:300px;height:200px;">
+        <img src="/_upload/article/images/a8/8b/fcea74ae4ae1aee5a47dfb2312f3/49633c1f-31ac-446c-a706-a790c9e2ede2.jpeg" style="width:300px;height:200px;" /><a style="position:absolute;top:50%;left:0;z-index:3;width:300px;height:50px;font-size:20px;font-weight:bold;line-height:50px;color:#af1f25;text-align:center;margin-top:-25px;" href="http://202.119.224.70/_s332/xcjj/list.psp">巡察聚焦</a>
+    </div>
+</div>
+```
+
 http://202.119.224.70/_s332/dsjdwxczt/list.psp
-
-以上两个分别对应 PPT 第 4、5 页，都是文章内容，需要在后台自行排版
-
-建议可以切成图片排版
