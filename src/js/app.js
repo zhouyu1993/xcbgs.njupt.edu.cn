@@ -1,3 +1,56 @@
+function RJzerofill (input) {
+  const num = Number(input)
+
+  return num < 10 ? '0' + num : num
+}
+
+function RJsplitTime (ms) {
+  ms = Number(ms)
+  const time = ms ? new Date(ms) : new Date()
+
+  const week = time.getDay()
+
+  let weekFormate = ''
+  if (week === 0) {
+    weekFormate = '日'
+  } else if (week === 1) {
+    weekFormate = '一'
+  } else if (week === 2) {
+    weekFormate = '二'
+  } else if (week === 3) {
+    weekFormate = '三'
+  } else if (week === 4) {
+    weekFormate = '四'
+  } else if (week === 5) {
+    weekFormate = '五'
+  } else if (week === 6) {
+    weekFormate = '六'
+  }
+
+  return {
+    year: time.getFullYear(),
+    month: RJzerofill(time.getMonth() + 1),
+    day: RJzerofill(time.getDate()),
+    week,
+    weekFormate,
+    hour: RJzerofill(time.getHours()),
+    minute: RJzerofill(time.getMinutes()),
+    second: RJzerofill(time.getSeconds())
+  }
+}
+
+function RJdateFormate (ms, format) {
+  const formater = format || 'YY-MM-DD hh:mm:ss'
+  const t = RJsplitTime(ms)
+  return formater.replace('YY', t.year)
+    .replace('MM', t.month)
+    .replace('DD', t.day)
+    .replace('weekFormate', t.weekFormate)
+    .replace('hh', t.hour)
+    .replace('mm', t.minute)
+    .replace('ss', t.second)
+}
+
 // 获取导航列表
 function RJgetNav (id, className) {
   if (!$(id)) return
@@ -102,6 +155,8 @@ function RJsearch () {
 (function() {
   try {
     if (!window.$ || !window.$.ajax) return alert('jquery error! 请升级浏览器或使用主流浏览器！')
+
+    $('.nav .todayTime').html(RJdateFormate('', '今天是' + 'YY年MM月DD日星期weekFormate'))
 
     RJgetNav('#wp_nav_w1', '.nav')
 
