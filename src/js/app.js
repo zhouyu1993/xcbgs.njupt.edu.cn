@@ -1,16 +1,17 @@
 function RJzerofill (input) {
-  const num = Number(input)
+  var num = Number(input)
 
   return num < 10 ? '0' + num : num
 }
 
 function RJsplitTime (ms) {
   ms = Number(ms)
-  const time = ms ? new Date(ms) : new Date()
 
-  const week = time.getDay()
+  var time = ms ? new Date(ms) : new Date()
 
-  let weekFormate = ''
+  var week = time.getDay()
+
+  var weekFormate = ''
   if (week === 0) {
     weekFormate = '日'
   } else if (week === 1) {
@@ -31,8 +32,8 @@ function RJsplitTime (ms) {
     year: time.getFullYear(),
     month: RJzerofill(time.getMonth() + 1),
     day: RJzerofill(time.getDate()),
-    week,
-    weekFormate,
+    week: week,
+    weekFormate: weekFormate,
     hour: RJzerofill(time.getHours()),
     minute: RJzerofill(time.getMinutes()),
     second: RJzerofill(time.getSeconds())
@@ -40,8 +41,8 @@ function RJsplitTime (ms) {
 }
 
 function RJdateFormate (ms, format) {
-  const formater = format || 'YY-MM-DD hh:mm:ss'
-  const t = RJsplitTime(ms)
+  var formater = format || 'YY-MM-DD hh:mm:ss'
+  var t = RJsplitTime(ms)
   return formater.replace('YY', t.year)
     .replace('MM', t.month)
     .replace('DD', t.day)
@@ -63,6 +64,7 @@ function RJgetNav (id, className) {
     var a = $(listArr[i])
     var href = a.attr('href')
     var text = a.attr('title')
+
     html += '<a href="' + href + '">' + text + '</a>'
   }
 
@@ -88,6 +90,7 @@ function RJgetArticles (id, className) {
     var a = $(listArr[i]).find('a')
     var href = a.attr('href')
     var text = a.attr('title')
+
     html += '<a href="' + href + '"><p><i></i>' + text + '</p></a>'
   }
 
@@ -108,11 +111,28 @@ function RJgetPics (imgJsons, className) {
 }
 
 // 获取图片列表
-function RJgetPics2 (imgJsons, className) {
+function RJgetPics2 (imgJsons, className, id) {
+  var titleArr = []
+
+  if (id && $(id)) {
+    var list = $(id + ' .list_item')
+    var listArr = Array.prototype.slice.call(list)
+
+    for (var i = 0; i < listArr.length; i ++) {
+      var a = $(listArr[i]).find('a')
+      var text = a.attr('title')
+
+      titleArr.push(text)
+    }
+  }
+
   var html = ''
   var spans = ''
   for (var i = 0; i < imgJsons.length; i ++) {
-    html += '<a href="' + imgJsons[i].url + '"><img src="' + imgJsons[i].src + '"><p>' + imgJsons[i].title + '</p></a>'
+    var phtml = titleArr[i] ? '<p>' + titleArr[i] + '</p>' : ''
+
+    html += '<a href="' + imgJsons[i].url + '"><img src="' + imgJsons[i].src + '">' + phtml + '</a>'
+
     spans += i === 0 ? ('<span class="hover">' + (i + 1) + '</span>') : ('<span>' + (i + 1) + '</span>')
   }
 
@@ -184,10 +204,10 @@ function RJsearch () {
     RJgetArticles('#wp_news_w4', '.file-info')
     RJgetArticles('#wp_news_w5', '.school-info')
 
-    if (window.w9imgJsons) {
-      RJgetPics2(window.w9imgJsons, '.pic-link')
+    if (window.w6imgJsons) {
+      RJgetPics2(window.w6imgJsons, '.pic-link', '#wp_news_w9')
 
-      RJswipe(window.w9imgJsons, '.pic-link')
+      RJswipe(window.w6imgJsons, '.pic-link')
     }
 
     if (window.w7imgJsons) {
