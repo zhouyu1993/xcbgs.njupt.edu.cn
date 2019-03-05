@@ -107,6 +107,19 @@ function RJgetPics (imgJsons, className) {
   $(className + ' .num').html(spans)
 }
 
+// 获取图片列表
+function RJgetPics2 (imgJsons, className) {
+  var html = ''
+  var spans = ''
+  for (var i = 0; i < imgJsons.length; i ++) {
+    html += '<a href="' + imgJsons[i].url + '"><img src="' + imgJsons[i].src + '"><p>' + imgJsons[i].title + '</p></a>'
+    spans += i === 0 ? ('<span class="hover">' + (i + 1) + '</span>') : ('<span>' + (i + 1) + '</span>')
+  }
+
+  $(className + ' .list').html(html)
+  $(className + ' .num').html(spans)
+}
+
 // 图片轮播
 function RJswipe (imgJsons, className, time) {
   var reder = function (hover) {
@@ -129,6 +142,12 @@ function RJswipe (imgJsons, className, time) {
 
     reder(hover)
   }, time || 5000)
+
+  $(className + ' span').on('click', function () {
+    hover = $(this).text() - 1
+
+    reder(hover)
+  })
 }
 
 // 搜索功能
@@ -165,10 +184,10 @@ function RJsearch () {
     RJgetArticles('#wp_news_w4', '.file-info')
     RJgetArticles('#wp_news_w5', '.school-info')
 
-    if (window.w6imgJsons) {
-      RJgetPics(window.w6imgJsons, '.pic-link')
+    if (window.w9imgJsons) {
+      RJgetPics2(window.w9imgJsons, '.pic-link')
 
-      RJswipe(window.w6imgJsons, '.pic-link')
+      RJswipe(window.w9imgJsons, '.pic-link')
     }
 
     if (window.w7imgJsons) {

@@ -167,6 +167,8 @@ img {
 
       .list {
         a {
+          position: relative;
+          z-index: 2;
           display: none;
 
           &:first-child {
@@ -179,8 +181,14 @@ img {
 
           p {
             @include oneline();
-            background-color: #eee;
+            position: absolute;
+            bottom: 0;
+            z-index: 3;
+            width: 100%;
+            background-color: rgba(0, 0, 0, .7);
             font-size: 14px;
+            line-height: 30px;
+            color: #fff;
             text-align: center;
           }
         }
@@ -189,7 +197,7 @@ img {
       .num {
         position: absolute;
         right: 10px;
-        bottom: 20px;
+        bottom: 45px;
         z-index: 2;
         font-size: 0;
 
