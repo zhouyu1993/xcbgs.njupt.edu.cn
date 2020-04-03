@@ -340,6 +340,8 @@ img {
         border-top: 3px solid #ac0000;
 
         .wp_article_list {
+          padding-bottom: 40px;
+
           .list_item {
             height: 43px!important;
             padding-right: 20px!important;
@@ -356,6 +358,7 @@ img {
             a {
               @include oneline();
               display: block;
+              font-family: Songti SC;
             }
           }
         }
